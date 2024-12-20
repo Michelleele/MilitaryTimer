@@ -39,22 +39,22 @@ public class Time {
         if (seconds + numOfSeconds >= 60) {
             seconds = (seconds + numOfSeconds) - 60;
             numOfMinute ++;
-            if (minute + numOfMinute >= 60) {
-                minute = (minute + numOfMinute) - 60;
-                numOfHour ++;
-                if (hour + numOfHour >= 24) {
-                    hour = (hour + numOfHour) - 24;
-                }
-                else {
-                    hour += numOfHour;
-                }
-            }
-            else {
-                minute += numOfMinute;
-            }
         }
         else {
             seconds += numOfSeconds;
+        }
+        if (minute + numOfMinute >= 60) {
+            minute = (minute + numOfMinute) - 60;
+            numOfHour ++;
+        }
+        else {
+            minute += numOfMinute;
+        }
+        if (hour + numOfHour >= 24) {
+            hour = (hour + numOfHour) - 24;
+        }
+        else {
+            hour += numOfHour;
         }
     }
 
