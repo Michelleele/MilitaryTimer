@@ -1,14 +1,32 @@
+/**
+ * The Time class represents a 24-hour digital clock.
+ * Each clock displays a distinct number of hours, minutes and seconds of the current time.
+ */
+
 public class Time {
 
     private int hour;
     private int minute;
     private int seconds;
 
+    /**
+     * Constructor for the Time class. This creates a new instance of a Time given the below parameters.
+     *
+     * @param hour represents the hour of the day displayed by the clock
+     * @param minute represents the minute of the hour of the day displayed by the clock
+     * @param seconds represents the second of the minute of the hour of the day displayed by the clock
+     */
+
     public Time(int hour, int minute, int seconds) {
         this.hour = hour;
         this.minute = minute;
         this.seconds = seconds;
     }
+
+    /**
+     * The tick method will increase the clock's time by one second.
+     * The amount of minutes and hours will also change accordingly if needed.
+     */
 
     public void tick() {
         if (seconds == 59) {
@@ -30,6 +48,12 @@ public class Time {
             seconds ++;
         }
     }
+
+    /**
+     * The add method increases the clock's time by a specific amount.
+     *
+     * @param time represents the amount of time the clock should increase by
+     */
 
     public void add(Time time) {
         int numOfHour = time.hour;
@@ -57,6 +81,13 @@ public class Time {
             hour += numOfHour;
         }
     }
+
+    /**
+     * toString method for the Time class.
+     * This method will return a String showing the current formatted time of the clock.
+     *
+     * @return returns the current time in a String in a properly formatted manner
+     */
 
     public String toString() {
         String temp = "";
